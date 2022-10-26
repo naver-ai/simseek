@@ -1,2 +1,2 @@
-# simseek
-Generating Information-Seeking Conversations from Unlabeled Documents (EMNLP 2022).
+# Simseek
+Official code and dataset are coming soon! Please stay tuned!
