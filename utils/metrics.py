@@ -1,3 +1,7 @@
+"""
+Most codes are from https://github.com/Maluuba/nlg-eval/tree/master/nlgeval/pycocoevalcap
+"""
+
 import numpy as np
 
 from nltk import bigrams as get_bigrams

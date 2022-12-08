@@ -1,3 +1,7 @@
+"""
+Most code is from https://github.com/facebookresearch/PAQ/blob/main/paq/generation/answer_extractor/span2D_model.py
+"""
+
 from dataclasses import dataclass
 from typing import List, Optional, Tuple, Dict
 import numpy as np
