@@ -91,7 +91,7 @@ $ python3 train_cqg.py \
     --eval_batch_size 32 \
     --num_train_epochs 10 \
     --learning_rate 3e-5 \
-    --max_passage_length 384
+    --max_passage_length 384 \
     --fewshot_t5
 ```
 The script fine-tunes the prior-grounded CQG module and provides its prediction/evaluation results on the development set.
@@ -102,7 +102,7 @@ Note that we use `--fewshot_t5` technique of [the previous study](https://arxiv.
 Please see [Training CQA Models](#training-and-evaluating-cqa-models)
 
 # Training and Evaluating CQA Models
-We fully release the scripts that can train and evaluate various CQA backbones (i.e., BERT, RoBERTa, Longformer). They are base on [transformers](https://github.com/huggingface/transformers) library by huggingface and we expand it onto the challenging CQA benchmark, QuAC. First, set the environment variables as belows.
+We fully release the scripts that can train and evaluate various CQA backbones (i.e., BERT, RoBERTa, Longformer). They are based on [transformers](https://github.com/huggingface/transformers) library by huggingface and we expand it onto the challenging CQA benchmark, QuAC. First, set the environment variables as belows.
 
 ## Set environment variables
 
@@ -195,7 +195,7 @@ export CAE_MODEL_PATH= # path of directory containing the CAE model
 export CQA_MODEL_TYPE= # the type backbone CQA model 'bert', 'roberta', 'longformer'
 export CQA_MODEL_PATH= # path of directory containing the CQA model 
 ```
-All scripts below takes `train.json` of QuAC format as input and generate synthetic conversations upon them. The resulting files are saved to `$OUTPUT_PATH`. You can set the maximum turn of synthetic conversations with `$MAX_TURN`.
+All scripts below takes `train.json` of QuAC format as input and generate synthetic conversations upon them. The resulting files are saved to `$OUTPUT_PATH`. 
 ## 1. SIMSEEK-SYM
 ```
 python3 gen_cqa_sym.py \
@@ -203,8 +203,9 @@ python3 gen_cqa_sym.py \
     --output_dir $OUTPUT_PATH \
     --cae_model_name_or_path $CAE_MODEL_PATH \
     --cqg_model_name_or_path $CQG_MODEL_PATH \
-    --max_turn $MAX_TURN \
+    --max_turn $MAX_TURN
 ```
+You can download our trained modules from `<Google Drive>/models` and set their locations as `$CAE_MODEL_PATH` or `$CQG_MODEL_PATH`. The framework will terminate conversations if they reach the maximum turn `$MAX_TURN`.
 
 ## 2. SIMSEEK-ASYM
 ```
